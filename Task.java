@@ -8,12 +8,23 @@ public class Task{
     private LocalDateTime createDate;
     private String title;
 
-    public Task(String title, String desc ){
-        this.id =idC++;
-        this.desc=desc;
-        this.isCompl=false;
-        this.createDate=LocalDateTime.now();
-        this.title=title;
+    public Task(String title, String desc) {
+        this.id = idC++;
+        this.title = title;
+        this.desc = desc;
+        this.isCompl = false;
+        this.createDate = LocalDateTime.now();
+    }
+
+     public Task(int id, String title, String desc, boolean isCompl) {
+        this.id = id;
+        this.title = title;
+        this.desc = desc;
+        this.isCompl = isCompl;
+        this.createDate = LocalDateTime.now();
+        if (id >= idC) {
+            idC = id + 1;
+        }
     }
 
     public int getId(){
@@ -48,6 +59,6 @@ public class Task{
         DateTimeFormatter form= DateTimeFormatter.ofPattern("dd.MM.yyyy hh.mm");
         String status= isCompl ? "Выполнена" : "Выполняется";
         String des=(desc != null && desc.isEmpty())?"\n Описание:"+desc:"";
-        return String.format("ID: %d %s %s Создано: %s %s",id,title,des,createDate.format(form),status);
+        return String.format("ID: %d %s (%s) Создано: %s %s",id,title,desc,createDate.format(form),status);
     }
 }
