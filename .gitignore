@@ -1,0 +1,48 @@
+# Compiled Java classes
+*.class
+
+# IDE files
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+.settings/
+.project
+.classpath
+bin/
+
+# Build directories
+target/
+build/
+out/
+dist/
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Log files
+*.log
+logs/
+
+# User-specific files
+*.properties
+*.cfg
+*.config
+
+# Task data files 
+tasks.txt
+todo_data.txt
+*.data
